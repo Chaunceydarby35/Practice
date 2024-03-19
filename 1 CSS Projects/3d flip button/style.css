@@ -12,11 +12,11 @@ body {
     width: 450px;
     transform-style: preserve-3d;
     transition: transform 300ms ease-in-out;
-    transform: rotateZ('-75px');
+    transform: translateZ(-75px);
 }
 
 .btn:hover {
-    transform: rotateX('-90deg') translateY('75px');
+   transform: rotateX(-90deg) translateY(75px);
 }
 
 .side {
@@ -35,11 +35,11 @@ body {
     background-color: white;
     border: 10px solid #069;
     color: #069;
-    transform: translateZ('75px');
+    transform: translateZ(75px);
 }
 
 .hover-side {
     color: white;
     background-color: #069;
-    transform: rotateX('90deg'), translateZ('75px');
-}
+    transform: rotateX(90deg) translateZ(75px);
+} 
