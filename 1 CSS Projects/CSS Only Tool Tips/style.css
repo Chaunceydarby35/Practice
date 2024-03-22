@@ -1,0 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border: 50%;
+    background-image: url('https://source.unsplash.com/gm619079366-107909151');
+    background-size: cover;
+    background-position: center;
+}
+
