@@ -38,7 +38,7 @@ body {
 
 .avatar::before {
     --translate-y: calc(-100 - var(var(--arrow-size)));
-    
+
     content: attr(data-tooltip);
     color: white;
     padding: .5rem;
@@ -50,12 +50,15 @@ body {
 }
 
 .avatar:hover::before,
-.avatar:hover:after {
+.avatar:hover::after {
     --scale: 1;
 }
 
 .avatar::after {
+    --translate-y:calc(-1 * var(--arrow-size))
+
     content: '';
     border: var(--arrow-size) solid transparent;
     border-top-color: var(--tooltip-color);
+    transform-origin: bottom center;
 }
