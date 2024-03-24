@@ -14,8 +14,20 @@ body {
     width: 100px;
     height: 100px;
     border: 50%;
-    background-image: url('https://source.unsplash.com/gm619079366-107909151');
+    background-image: url('https://source.unsplash.com/k7E11YWwXkA');
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
+.avatar::before,
+.avatar::after {
+    position: absolute;
+    content: '';
+    top: -.25rem;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    background: black;
+    transform: translateX(-50%) translateY(-100%);
+}
