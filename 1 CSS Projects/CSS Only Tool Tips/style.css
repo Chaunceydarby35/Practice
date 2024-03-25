@@ -26,18 +26,18 @@ body {
     --scale: 0;
     --arrow-size: 10px;
     --tooltip-color:#333;
-    --translate-y:
+
 
     position: absolute;
     top: -.25rem;
     left: 50%; 
     transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
     transition: 150ms transform;
-    transform-origin: bottom center;
+    transform-origin: top center;
 }
 
 .avatar::before {
-    --translate-y: calc(-100 - var(var(--arrow-size)));
+    --translate-y: calc(-100% - var(var(--arrow-size)));
 
     content: attr(data-tooltip);
     color: white;
@@ -55,7 +55,7 @@ body {
 }
 
 .avatar::after {
-    --translate-y:calc(-1 * var(--arrow-size))
+    --translate-y:calc(-1 * var(--arrow-size));
 
     content: '';
     border: var(--arrow-size) solid transparent;
