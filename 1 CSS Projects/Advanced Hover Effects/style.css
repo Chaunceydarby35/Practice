@@ -49,6 +49,11 @@ button {
     bottom: calc(var(--border-size) * -2);
 }
 
+.btn.btn-border-pop:hover,
+.btn.btn-border-pop:focus {
+    background-color: aqua;
+    color: blueviolet;
+}
 
 .btn.btn-background-slide::before {
     content: '';
@@ -60,8 +65,9 @@ button {
     z-index: -1;
     background-color: var(--accent-color);
 
+    transition: 300ms ease-in-out;
     transform: scaleX(0);
-    /* transform-origin: left; */
+    transform-origin: left;
 }
 
 .btn.btn-background-slide:hover::before,
@@ -70,5 +76,61 @@ button {
 }
 
 .btn.btn-background-slide {
+    transition: color 300ms ease-in-out;
     z-index: 1;
+}
+
+.btn.btn-background-slide:hover,
+.btn.btn-background-slide:focus {
+    color: white;
+}
+
+.btn.btn-background-circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    transition: transform 500ms ease-in-out;
+
+    transform: scale(1.5);
+}
+
+.btn.btn-background-circle:hover::before,
+.btn.btn-background-circle:focus::before {
+    transform: scale(0);
+}
+
+
+.btn.btn-background-circle {
+    z-index: 1;
+    overflow: hidden;
+    background-color: var(--accent-color);
+}
+
+.btn.btn-background-circle:hover,
+.btn.btn-background-circle:focus {
+    color: white;
+}
+
+.btn.btn-border-underline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    background-color: var(--accent-color);
+    transition: transform 300ms ease-in-out;
+
+    transform: scaleX(0);
+}
+
+.btn.btn-border-underline:hover::before,
+.btn.btn-border-underline:focus::before {
+    transform: scaleX(1);
 }
