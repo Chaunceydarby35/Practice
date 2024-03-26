@@ -1,0 +1,44 @@
+:root {
+    --background: linear-gradient(45deg, #02001F, #1F1B4E);
+    --text-color: #e3306f;
+    --line-height: 1.5
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    padding-top: 25px;
+    list-style: none;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: var(--line-height);
+}
+
+.list-item:hover {
+    height: calc(var(--line-height) * .5em);
+    /* overflow: hidden; */
+}
+
+.list-item:hover::before {
+    content: attr(data-text);
+    height: calc(var(--line-height) * .5em);
+    width: 100%;
+    overflow: hidden;
+}
+
