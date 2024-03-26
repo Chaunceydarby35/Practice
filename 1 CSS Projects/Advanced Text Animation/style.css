@@ -1,7 +1,6 @@
 :root {
     --background: linear-gradient(45deg, #02001F, #1F1B4E);
     --text-color: #e3306f;
-    --line-height: 1.5
 }
 
 body {
@@ -22,23 +21,58 @@ body {
 }
 
 .list-item {
-    display: flex;
-    flex-direction: column;
+    
     font-weight: bold;
     font-size: 1.5rem;
-    text-align: center;
-    line-height: var(--line-height);
+    display: flex;
+    justify-content: center;
 }
 
-.list-item:hover {
-    height: calc(var(--line-height) * .5em);
-    /* overflow: hidden; */
+
+.list-item:hover > .split-text {
+    color: transparent;
 }
 
-.list-item:hover::before {
+.list-item > .split-text::after {
+    content: "";
+    transition: transform 200ms ease-in-out;
+    transform: skewX(0);
+}
+
+.list-item > .split-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.list-item > .split-text::after {
+    animation: skew-left 200ms ease-in-out backwards reverse;
+}
+
+.list-item:hover > .split-text::before,
+.list-item:hover > .split-text::after {
+    position: absolute;
     content: attr(data-text);
-    height: calc(var(--line-height) * .5em);
-    width: 100%;
+    height: calc(.5em);
     overflow: hidden;
+    left: 0;
+    right: 0;
+    color: var(--text-color);
 }
 
+
+.list-item:hover > .split-text::after {
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    transform: skewX(15deg);
+    transition: transform 200ms ease-in-out;
+    animation: skew-left 200ms ease-in-out forwards;
+}
+
+@keyframes skew-left {
+    100% {
+        transform: skewX(10px);
+    }
+}
