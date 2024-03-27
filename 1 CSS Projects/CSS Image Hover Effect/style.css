@@ -1,11 +1,11 @@
-body{
+body {
     margin: 0;
     margin-bottom: 25rem;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .img-wrapper {
@@ -24,7 +24,7 @@ body{
 .img-wrapper > .content {
     position: absolute;
     inset: 0;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.4);
     display: flex;
@@ -37,8 +37,12 @@ body{
     transition: 200ms ease-in-out;
 }
 
-.img-wrapper > img.blur {
+.img-wrapper:hover > img.blur {
     filter: blur(5px);
+}
+
+.img-wrapper:hover > img.gray {
+    filter: grayscale(1);
 }
 
 .img-wrapper > img.zoom {
@@ -60,4 +64,27 @@ body{
 
 .img-wrapper:hover > .content.slide-left {
    transform: translateX(0);
+}
+
+
+.img-wrapper > .content.slide-right {
+    transform: translateX(100%);
+}
+
+.img-wrapper:hover > .content.slide-right {
+   transform: translateX(0);
+}
+.img-wrapper > .content.slide-up {
+    transform: translateY(-100%);
+}
+
+.img-wrapper:hover > .content.slide-up{
+   transform: translateY(0);
+}
+.img-wrapper > .content.slide-down {
+    transform: translateY(100%);
+}
+
+.img-wrapper:hover > .content.slide-down {
+   transform: translateY(0);
 }
